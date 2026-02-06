@@ -240,5 +240,11 @@ async def main():
 		sys.exit(1)
 
 
+def main_sync():
+	"""Synchronous entry point for script execution."""
+	asyncio.run(main())
+
+
+
 if __name__ == "__main__":
 	asyncio.run(main()) 

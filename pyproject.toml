@@ -3,8 +3,8 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "iflow-mcp_alexmiawat-1c_mcp_server_own"
-version = "1.0.0"
+name = "iflow-mcp-1c-alexmiawat-server"
+version = "1.0.1"
 description = "MCP proxy server for 1C:Enterprise - bridge between AI agents and 1C database"
 readme = "README.md"
 license = { text = "MIT" }
@@ -42,7 +42,7 @@ dev = [
 ]
 
 [project.scripts]
-iflow-mcp-1c-server = "main:main"
+iflow-mcp-1c-server = "iflow_mcp_1c_server.main:main_sync"
 
 [project.urls]
 Homepage = "https://github.com/iflow-mcp/alexmiawat-1c_mcp_server_own"
@@ -50,17 +50,10 @@ Repository = "https://github.com/iflow-mcp/alexmiawat-1c_mcp_server_own"
 Issues = "https://github.com/iflow-mcp/alexmiawat-1c_mcp_server_own/issues"
 
 [tool.hatch.build.targets.wheel]
-packages = ["."]
+packages = ["iflow_mcp_1c_server"]
 
 [tool.hatch.build.targets.sdist]
 include = [
-    "/main.py",
-    "/config.py",
-    "/mcp_server.py",
-    "/http_server.py",
-    "/stdio_server.py",
-    "/onec_client.py",
-    "/auth",
+    "/iflow_mcp_1c_server",
     "/README.md",
-    "/requirements.txt",
 ]
